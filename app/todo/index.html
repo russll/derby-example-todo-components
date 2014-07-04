@@ -1,0 +1,13 @@
+<index: element="todo">
+    <li class="{{if todo.completed}}completed{{/}} {{if #root._page.edit.id === todo.id}}editing{{/}}">
+
+        <div class="view">
+            <input class="toggle" type="checkbox" checked="{{todo.completed}}">
+            <label on-dblclick="editTodo(todo)">{{todo.text}}</label>
+            <button class="destroy" on-click="delTodo(todo.id)"> </button>
+        </div>
+        <form on-submit="doneEditing(_page.edit)">
+            <input id="{{todo.id}}" class="edit" value="{{#root._page.edit.text}}" on-keyup="cancelEditing($event)">
+        </form>
+
+    </li>

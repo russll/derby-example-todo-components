@@ -1,0 +1,6 @@
+<index: element="todos">
+    <ul id="todo-list">
+        {{each #root._page.todos as #todo}}
+            <todo todo="{{#todo}}"></todo>
+        {{/each}}
+    </ul>
